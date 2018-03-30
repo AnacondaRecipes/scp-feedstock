@@ -1,6 +1,6 @@
 {% set name = "scp" %}
 {% set version = "0.10.2" %}
-{% set build = 1 %}
+{% set build = 2 %}
 {% set sha256 = "ea259edf4bba132050425bf9fdcf6de0987693a8934dbb99558d8dc6fc313e48" %}
 
 package:
@@ -18,7 +18,7 @@ build:
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
-  build:
+  host:
     - python
     - pip
     - paramiko
