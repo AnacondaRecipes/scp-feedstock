@@ -17,6 +17,8 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
+    - wheel
   run:
     - python
     - paramiko
@@ -24,6 +26,10 @@ requirements:
 test:
   imports:
     - scp
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
   home: https://github.com/jbardin/scp.py.git
