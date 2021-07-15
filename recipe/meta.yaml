@@ -1,4 +1,4 @@
-{% set version = "0.13.4" %}
+{% set version = "0.13.6" %}
 
 package:
   name: scp
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/s/scp/scp-{{ version }}.tar.gz
-  sha256: e60948dd3e1aa13da21aa1bf8a025fabbbc2816ed04f1a1272410247d1a86f15
+  sha256: 0a72f9d782e968b09b114d5607f96b1f16fe9942857afb355399edd55372fcf1
 
 build:
   number: 0
