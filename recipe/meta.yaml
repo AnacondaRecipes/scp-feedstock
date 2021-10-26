@@ -11,6 +11,7 @@ source:
 build:
   number: 0
   noarch: python
+  skip: True  # [py<3.7]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -28,6 +29,7 @@ test:
     - scp
   requires:
     - pip
+    - python <3.10
   commands:
     - pip check
 
@@ -37,7 +39,7 @@ about:
   license_file: LICENSE.txt
   license_family: LGPL
   dev_url: https://github.com/jbardin/scp.py
-  doc_url: https://github.com/jbardin/scp.py
+  doc_url: https://github.com/jbardin/scp.py/blob/master/README.rst
   summary: Pure python scp module for paramiko
 
 extra:
