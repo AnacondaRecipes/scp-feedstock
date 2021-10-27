@@ -11,7 +11,8 @@ source:
 build:
   number: 0
   noarch: python
-  skip: True  # [py<3.7]
+  # there are missing dependencies for s390x
+  skip: True  # [py<37 or s390x]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
