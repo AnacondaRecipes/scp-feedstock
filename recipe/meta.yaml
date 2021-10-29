@@ -1,4 +1,4 @@
-{% set version = "0.13.6" %}
+{% set version = "0.14.1" %}
 
 package:
   name: scp
@@ -6,11 +6,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/s/scp/scp-{{ version }}.tar.gz
-  sha256: 0a72f9d782e968b09b114d5607f96b1f16fe9942857afb355399edd55372fcf1
+  sha256: b776bd6ce8c8385aa9a025b64a9815b5d798f12d4ef0d712d569503f62aece8b
 
 build:
   number: 0
   noarch: python
+  # there are missing dependencies for s390x
+  skip: True  # [py<37 or s390x]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -28,6 +30,7 @@ test:
     - scp
   requires:
     - pip
+    - python <3.10
   commands:
     - pip check
 
@@ -37,7 +40,7 @@ about:
   license_file: LICENSE.txt
   license_family: LGPL
   dev_url: https://github.com/jbardin/scp.py
-  doc_url: https://github.com/jbardin/scp.py
+  doc_url: https://github.com/jbardin/scp.py/blob/master/README.rst
   summary: Pure python scp module for paramiko
 
 extra:
