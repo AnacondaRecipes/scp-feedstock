@@ -1,8 +1,6 @@
 {% set name = "scp" %}
 {% set version = "0.16.1" %}
 
-# Tests are disabled, need to setup the SSH server.
-# https://github.com/jbardin/scp.py/blob/master/.ci/setup_ssh.sh
 package:
   name: {{ name }}
   version: {{ version }}
@@ -25,6 +23,8 @@ requirements:
     - python
     - paramiko
 
+# Tests are disabled, need to setup the SSH server.
+# https://github.com/jbardin/scp.py/blob/master/.ci/setup_ssh.sh
 test:
   imports:
     - scp
