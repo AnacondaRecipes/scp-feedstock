@@ -1,13 +1,15 @@
 {% set name = "scp" %}
-{% set version = "0.16.1" %}
+{% set version = "0.16.2" %}
 
+# Tests are disabled, need to setup the SSH server.
+# https://github.com/jbardin/scp.py/blob/master/.ci/setup_ssh.sh
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3f2b260bf9bd4c2b6857f697a1d7e8edc26fa569282b77027e849dfe1e48580a
+  sha256: d049f9aa77db4042c44b922cecabe97ef0716fb334a95701d68d1c7991684fc2
 
 build:
   number: 0
@@ -23,8 +25,6 @@ requirements:
     - python
     - paramiko
 
-# Tests are disabled, need to setup the SSH server.
-# https://github.com/jbardin/scp.py/blob/master/.ci/setup_ssh.sh
 test:
   imports:
     - scp
